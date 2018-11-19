@@ -16,7 +16,7 @@ using System;
 using System.Collections.Specialized;
 using System.Globalization;
 
-namespace Sitecore.Shell.Applications.WebEdit.Commands
+namespace Sitecore.Support.Shell.Applications.WebEdit.Commands
 {
   [Serializable]
   public class OpenExperienceEditor : Command
@@ -101,6 +101,7 @@ namespace Sitecore.Shell.Applications.WebEdit.Commands
               if (string.IsNullOrEmpty(value))
               {
                 value = WebEditUtility.ResolveContentLanguage(siteContext).ToString();
+                urlString.Add("sc_lang", value);
               }
               if (!string.IsNullOrEmpty(args.Parameters["sc_lang"]))
               {

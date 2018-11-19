@@ -64,9 +64,10 @@ namespace Sitecore.Support.Shell.Applications.WebEdit.Commands
         if (string.IsNullOrEmpty(langName))
         {
           langName = WebEditUtility.ResolveContentLanguage(site).ToString();
+          url.Add("sc_lang", langName);
         }
 
-        if (string.IsNullOrEmpty(args.Parameters["sc_lang"]))
+        if (!string.IsNullOrEmpty(args.Parameters["sc_lang"]))
         {
           url.Add("sc_lang", langName);
         }
